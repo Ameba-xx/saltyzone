@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block login %}
+<form class="navbar-form navbar-left" role="form" action="/login" method="POST">
+  <div class="input-group">
+    <span class="input-group-addon">
+      <span class="glyphicon glyphicon-user"></span>
+    </span>
+    <input type="text" class="form-control input-sm" placeholder="Nombre de usuario" name="username" />
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon">
+      <span class="glyphicon glyphicon-lock"></span>
+    </span>
+    <input type="password" class="form-control input-sm" placeholder="Contraseña" name="password">
+  </div>
+  <button type="submit" class="btn btn-success">Ingresar</button>
+  <a href="/register" class="btn btn-info">Regístrate</a>
+</form>
+{% endblock %}

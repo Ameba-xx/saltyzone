@@ -1,0 +1,5 @@
+{% extends "layout.html" %}
+
+{% block login %}
+<p class="navbar-text">¡Bienvenido, {{ session['username'] }}!</p> <a href="/logout" type="button" class="btn btn-danger navbar-btn">Cerrar sesión</a>
+{% endblock %}

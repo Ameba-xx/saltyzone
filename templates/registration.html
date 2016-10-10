@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+
+	{% block style %}
+	{% endblock %}
+
+	{% block content %}
+	<div class="container padding-top-10">
+		<!-- <ul class="breadcrumb">
+			<li><a href="/">Inicio</a></li>
+			<li class="active">Registro</li>
+		</ul> -->
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				Registro
+			</div>
+			<div class="panel-body">
+				{% block error %}
+				{% endblock %}
+				<form data-toggle="validator" role="form" action="/register" method="POST">
+					<label for="username" class="control-label">Nombre de usuario:</label>
+					<div class="row">
+						<div class="col-md-6 padding-top-10">
+							<div class="form-group">
+								<input type="text" data-minlength="3" maxlength="20" class="form-control" name="username" id="username" placeholder="Ingresar nombre de usuario" required/>
+								<div class="help-block">Mínimo 3 caracteres</div>
+							</div>
+						</div>
+					</div>
+					<label for="nombre" class="control-label padding-top-10">Nombre completo (no requerido):</label>
+					<div class="row">
+						<div class="col-md-6 padding-top-10">
+							<input type="text" maxlength="20" class="form-control" name="firstname" id="nombre" placeholder="Ingresar nombre" />
+						</div>
+						<div class="col-md-6 padding-top-10">
+							<input type="text" maxlength="20" class="form-control" name="lastname" id="apellido" placeholder="Ingresar apellido" />
+						</div>
+					</div>
+					<div class="row padding-top-10">
+						<div class="col-md-6 padding-top-10">
+							<label for="email" class="control-label">Correo electrónico (email):</label>
+						</div>
+						<div class="col-md-6 padding-top-10">
+							<label for="confirmemail" class="control-label">Confirmar correo electrónico (email):</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6 padding-top-10">
+							<div class="form-group">
+								<input type="email" maxlength="100" class="form-control" name="email" id="email" placeholder="Ingresar email" data-error="Dirección de email inválida" required />
+								<div class="help-block with-errors"></div>
+							</div>
+						</div>
+						<div class="col-md-6 padding-top-10">
+							<div class="form-group">
+								<input type="text" class="form-control" name="confirm_email" id="confirm_email" placeholder="Confirmar email" data-match="#email" data-error="Campo requerido" data-match-error="Las direcciones de email no coinciden." required />
+								<div class="help-block with-errors"></div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6 padding-top-10">
+							<label for="password" class="control-label">Contraseña:</label>
+						</div>
+						<div class="col-md-6 padding-top-10">
+							<label for="confirmpassword" class="control-label">Confirmar contraseña:</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6 padding-top-10">
+							<div class="form-group">
+								<input type="password" data-minlength="6" maxlength="20" class="form-control" name="password" id="password" placeholder="Ingresar contraseña" required />
+								<div class="help-block">Mínimo 6 caracteres</div>
+							</div>
+						</div>
+						<div class="col-md-6 padding-top-10">
+							<div class="form-group">
+								<input type="password" class="form-control" name="confirm_password" id="confirm_password" placeholder="Confirmar contraseña" data-match="#password" data-match-error="Las contraseñas no coinciden." required />
+								<div class="help-block with-errors"></div>
+							</div>
+						</div>
+					</div>
+					<div class="row padding-top-10">
+						<div class="col-md-2 padding-top-10">
+							<button type="submit" class="btn btn-success">Registrarse</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!--
+		Bootstrap javascript and jQuery should be loaded
+		Placed at the end of the document for faster load times
+	-->
+	{% endblock %}
